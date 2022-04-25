@@ -1,0 +1,45 @@
+[include]
+	path = ~/.gitconfig-local
+
+[user]
+  name = Isma Perez
+  email = ismael.perez@intenthq.com
+
+[core]
+  excludesfile = /Users/ismaelperez/.gitignore_global
+  editor = vim
+
+[init]
+	defaultBranch = main
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[alias]
+  s = stash
+  sp = stash pop
+  co = checkout
+  ci = commit
+  st = status
+  diff = difftool
+  cp = cherry-pick
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
+  hist = log --color --pretty=format:\"%C(yellow)%h %C(green)%ai %ad %C(reset) %s%C(bold red)%d%C(reset) %C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
+
+[push]
+  default = current
+
+[diff]
+  tool = vim
+
+[merge]
+  tool  = vim
+
+[difftool "vim"]
+  cmd = "vim -d \"$LOCAL\" \"$REMOTE\""
+
+[mergetool "vim"]
+    cmd = vim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c '$wincmd J'
